@@ -120,12 +120,8 @@ const HomeScreen = () => {
             </View>
             </View>
             <View style={styles.rightSide}>
-                <Image source={item.image}/>
+                <Image source={item.image} style={styles.mealImage} />
             </View>
-           
-     
-
-          
             </View>
         ))}
       </ScrollView>
@@ -134,6 +130,7 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
+    
     ratingText:{
         fontSize:12,
         marginLeft:5,
@@ -144,11 +141,24 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
     },
+    rightSide: {
+    overflow: 'hidden',
+    flex: 1,
+    justifyContent:'center',
+
+  },
+  mealImage: {
+    resizeMode: 'contain',
+    width: 220,  
+    height: 220, 
+    marginLeft:20,
+  },
     ratingWrapper:{
         marginLeft:20,
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
+        
     },
     addToBasketWrapper:{
         backgroundColor:'#FF0032',
