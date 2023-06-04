@@ -160,17 +160,16 @@ const styles = StyleSheet.create({
         alignItems:'center',
         
     },
-    addToBasketWrapper:{
-        backgroundColor:'#FF0032',
-        height:53,
-        width:90,
-        borderBottomLeftRadius:25,
-        borderTopRightRadius:25,
-        marginTop:10,
-        justifyContent:'center',
-        alignItems:'center',
-
-    },
+    addToBasketWrapper: {
+        backgroundColor: '#FF0032',
+        height: 53,
+        width: 90,
+        borderBottomLeftRadius: 25,
+        borderTopRightRadius: 25,
+        marginTop: Platform.select({ ios: '6%', android: '10%' }),  
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
     itemTitle:{
         marginBottom:5,
         fontSize:14,
@@ -256,7 +255,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginHorizontal: 20,
-    marginTop: 20,
+    marginTop: 40,
   },
   titleTextWrapper: {
     marginHorizontal: 20,
