@@ -98,20 +98,35 @@ const HomeScreen = () => {
         <Text style={styles.popularText}>Popular</Text>
 
         {popularData.map((item) => (
+        
           <View key={item.id} style={[styles.popularMealsWrapper,{marginTop:item.id ==1 ? 10 : 0}]}>
+            <View style={styles.leftSide}>
             <View style={styles.popularMealsTopTitle}>
-              <MaterialIcons name="star" size={15} color={'#FF0032'} />
+              <MaterialIcons name="favorite" size={15} color={'#FF0032'} />
               <Text style={styles.topOfWeekText}>Top of The Week</Text>
             </View>
             <View style={styles.popularMealsMidTitle} >
                 <Text style={styles.itemTitle}>{item.title}</Text>
                 <Text style={styles.itemWeight}>Weight {item.weight}</Text>
             </View>
+            <View style={styles.bottomWrapper}>
             <View style={styles.addToBasketWrapper}>
                 <MaterialIcons name="add" size={20} color={'white'} />
             </View>
+            <View  style={styles.ratingWrapper}>
+                <MaterialIcons name="star" size={12} color={'black'} />
+                <Text style={styles.ratingText}>{item.rating}</Text>
+            </View>
+            </View>
+            </View>
+            <View style={styles.rightSide}>
+                <Image source={item.image}/>
+            </View>
+           
+     
 
-          </View>
+          
+            </View>
         ))}
       </ScrollView>
     </SafeAreaView>
@@ -119,6 +134,22 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
+    ratingText:{
+        fontSize:12,
+        marginLeft:5,
+        fontFamily:'Montserrat-SemiBold',
+
+    },
+    bottomWrapper:{
+        flexDirection:'row',
+        alignItems:'center',
+    },
+    ratingWrapper:{
+        marginLeft:20,
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+    },
     addToBasketWrapper:{
         backgroundColor:'#FF0032',
         height:53,
@@ -148,9 +179,10 @@ const styles = StyleSheet.create({
         marginTop:20,
 
     },
-    topOfWeekText:{
+    topOfWeekText:{ 
         fontSize:14,
-        fontFamily:'Montserrat-SemiBold'
+        fontFamily:'Montserrat-SemiBold',
+        marginLeft:5,
     },
   popularMealsWrapper: {
     shadowColor: "#000",
@@ -166,6 +198,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginHorizontal: 20,
     borderRadius: 25,
+    flexDirection:'row',
   },
   popularMealsTopTitle: {
     flexDirection: "row",
