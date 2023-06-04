@@ -100,7 +100,7 @@ const HomeScreen = () => {
         {popularData.map((item) => (
         
           <View key={item.id} style={[styles.popularMealsWrapper,{marginTop:item.id ==1 ? 10 : 0}]}>
-            <View style={styles.leftSide}>
+            <View style={[styles.leftSide,{flex: 1,justifyContent: 'space-between',}]}>
             <View style={styles.popularMealsTopTitle}>
               <MaterialIcons name="favorite" size={15} color={'#FF0032'} />
               <Text style={styles.topOfWeekText}>Top of The Week</Text>
@@ -140,6 +140,9 @@ const styles = StyleSheet.create({
     bottomWrapper:{
         flexDirection:'row',
         alignItems:'center',
+        justifyContent:'flex-start',
+        alignSelf: 'flex-start',
+        
     },
     rightSide: {
     overflow: 'hidden',
@@ -150,8 +153,7 @@ const styles = StyleSheet.create({
   mealImage: {
     resizeMode: 'contain',
     width: 220,  
-    height: 220, 
-    marginLeft:20,
+    height: '100%', 
   },
     ratingWrapper:{
         marginLeft:20,
@@ -162,11 +164,10 @@ const styles = StyleSheet.create({
     },
     addToBasketWrapper: {
         backgroundColor: '#FF0032',
-        height: 53,
+        height: 50,
         width: 90,
         borderBottomLeftRadius: 25,
         borderTopRightRadius: 25,
-        marginTop: Platform.select({ ios: '6%', android: '10%' }),  
         justifyContent: 'center',
         alignItems: 'center',
       },
@@ -180,8 +181,7 @@ const styles = StyleSheet.create({
         fontSize:12,
         fontFamily:'Montserrat-Medium',
         color:'#C4C4C4'
-        
-
+    
     },
     popularMealsMidTitle:{
         marginLeft:20,
